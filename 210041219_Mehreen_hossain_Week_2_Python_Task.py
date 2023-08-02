@@ -6,12 +6,12 @@ def process_instructions(instruct, grid):
     cur_pos_y = 0
     for i in range(0, n):
         if instruct[i] == 'F' and (cur_dir) % 2:
-            if cur_dir == 1 and cur_pos_x < grid[0]: 
+            if cur_dir == 1 and cur_pos_x < int(grid[0]): 
                 cur_pos_x = cur_pos_x + 1
             elif cur_dir == 3 and cur_pos_x != 0: 
                 cur_pos_x = cur_pos_x - 1
         elif instruct[i] == 'F' and (cur_dir) % 2==0:
-            if cur_dir == 0 and cur_pos_y < grid[1]: 
+            if cur_dir == 0 and cur_pos_y < int(grid[1]): 
                 cur_pos_y = cur_pos_y + 1
             elif cur_dir == 2 and cur_pos_y != 0 : 
                 cur_pos_y = cur_pos_y - 1
@@ -26,5 +26,5 @@ def process_instructions(instruct, grid):
             
 
 instructions = input()
-grid_size = (5, 5)
+grid_size = list((input().split()))
 print(process_instructions(instructions, grid_size))
