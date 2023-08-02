@@ -4,6 +4,7 @@ def process_instructions(instruct, grid):
     cur_dir = 0
     cur_pos_x = 0
     cur_pos_y = 0
+    
     for i in range(0, n):
         if instruct[i] == 'F' and (cur_dir) % 2:
             if cur_dir == 1 and cur_pos_x < int(grid[0]): 
@@ -21,6 +22,7 @@ def process_instructions(instruct, grid):
         elif instruct[i] == 'R':
             cur_dir = cur_dir + 1
             if(cur_dir > 3): cur_dir = 0
+                
     print("current position: " + str(cur_pos_x) + " " + str(cur_pos_y))
     print("current direction: " + dir[cur_dir])
             
